@@ -2,6 +2,8 @@ var async = require('async');
 var t = require('./t');
 var log = t.log;
 
+
+
 /**
  * cargo也是一个串行的消息队列，类似于queue，通过限制了worker数量，不再一次性全部执行。
  * 当worker数量不够用时，新加入的任务将会排队等候，直到有新的worker可用。
