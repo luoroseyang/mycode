@@ -1,0 +1,236 @@
+@charset "UTF-8";
+
+//---------------------------------------------------
+// header.scss
+//---------------------------------------------------
+
+@import "core/function";
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.icon-back {
+    width: $barHeight;
+    height: $barHeight;
+    line-height: $barHeight;
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        vertical-align: middle;
+        border-left: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        transform: rotate(45deg);
+        box-sizing: border-box;
+    }
+}
+.icon-list {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 25px;
+    vertical-align: middle;
+    text-align: center;
+    &::before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        width: 5px;
+        height: 5px;
+        border-radius: 3px;
+        background-color: #fff;
+        box-shadow: 10px 0 0 #fff, -10px 0 0 #fff;
+    }
+}
+// icon search
+.icon-search {
+    border: 2px solid #fff;
+    border-radius: 50%;
+    height: 14px;
+    width: 14px;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    &::after {
+        content: "";
+        background: #fff;
+        height: 7px;
+        width: 2px;
+        position: absolute;
+        left: 11px;
+        top: 8px;
+        transform: rotate(-45deg);
+    }
+}
+.icon-tel {
+    @extend %icon-bg;
+    width: 20px;
+    height: 20px;
+    background-position: -23px -50px;
+}
+
+.icon-home {
+    @extend %icon-bg;
+    width: 20px;
+    height: 20px;
+    background-position: 0 -52px;
+}
+
+.icon-email {
+    @extend %icon-bg;
+    width: 20px;
+    height: 20px;
+    background-position: -198px -51px;
+}
+
+.cm-header{
+    position: fixed;
+    left: 0;
+    right: 0;
+    transform: translate3d(0,0,0);
+    top: 0;
+    height: $barHeight;
+    line-height: $barHeight;
+    text-align: center;
+    background-color: $primary;
+    color: #fff;
+    z-index: $zIndexHeader;
+    
+}
+
+.cm-header {
+    .cm-page-title,
+    .cm-page-mutil-title,
+    .cm-page-select-title{
+        position: absolute;
+        left: $barHeight * 2;
+        right: $barHeight * 2;
+    }
+    .cm-page-title {
+        line-height: $barHeight;
+        @extend %ellipsis;
+        font-size: 18px;
+        box-sizing: border-box;
+
+        .cm-title-l {
+            line-height: 28px;
+            display: block;
+        }
+        .cm-title-s {
+            line-height: 1;
+            font-size: 12px;
+            display: block;
+        }
+    }
+    .cm-page-mutil-title {
+        font-size: 14px;
+        line-height: 19px;
+        padding-top: 4px;
+        box-sizing: border-box;
+        overflow : hidden;    
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        height: $barHeight;
+    }
+    .cm-page-tabs-title {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,0);
+        display: inline-block;
+        background-color: #066f9b;
+        border-radius: $radiusBase;
+        padding: 1px;
+        line-height: 32px;
+        margin: 5px 0 0 0;
+        span {
+            float: left;
+            padding: 0 15px;
+            &.active {
+                background-color: $primary;
+                color: #fff;
+            }
+            &:first-child{
+                border-radius: $radiusBase 0 0 $radiusBase;
+            }
+            &:last-child{
+                border-radius: 0 $radiusBase $radiusBase 0;
+            }
+        }
+    }
+    .cm-page-select-title {
+        line-height: 44px;
+        &::after {
+            content: "";
+            @include arrow(bottom, 6px, #fff);
+            display: inline-block;
+            margin-left: 5px;
+            vertical-align: middle;
+            position: relative;
+            top: -2px;
+            transition: all 0.3s ease-in-out;
+        }
+        &.expanded {
+            &::after {
+                transform: rotate(135deg);
+                top: 1px;
+            }
+        }
+    }
+
+    .cm-header-icon,
+    .cm-header-btn{
+        cursor: pointer;
+        &:active {
+            background-color: darken($primary, 10%);
+        }
+    }
+    .cm-header-icon {
+        width: $barHeight;
+        height: $barHeight;
+        display: inline-block;
+        text-align: center;
+    }
+    .cm-header-btn {
+        padding: 0 10px;
+    }
+}
+
+.cm-header--light{
+    background: #fff;
+    color: $primary;
+    .icon-back{
+        background: none;
+        &::before{
+            border-color: $primary;
+        }
+    }
+    .cm-page-tabs-title{
+        color: #fff;
+    }
+    .cm-header-icon,
+    .cm-header-btn{
+        &:active {
+            background-color:transparent;
+        }
+    }
+    .cm-page-tabs-title {
+        span {
+            color: $primary;
+            background-color:#fff;
+        }
+    }
+    .cm-page-select-title{
+        &::after{
+            border-color: $primary;
+        }
+    }
+    .icon-email{
+        background-position: -24px -124px;
+    }
+    .icon-home{
+        background-position: 0 -124px;
+    }
+}

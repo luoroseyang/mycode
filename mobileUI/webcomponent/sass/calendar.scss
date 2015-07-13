@@ -1,0 +1,180 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------
+// calandar.scss
+//-----------------------------------------------------
+
+@import "core/function";
+
+$dayHeight:  54px !default;
+
+%calendar-day{
+    float: left;
+    width: 14.2%;
+    text-align: center;
+    
+    &:nth-of-type(7n),
+    &:nth-of-type(7n+1) {
+        
+        width: 14.5%;
+    }
+}
+
+.cm-day-list{
+    @extend %clearfix;
+    border-bottom: 1px solid $borderColor;
+    &:last-of-type{
+        border-bottom: none;
+    }
+    li{
+        @extend %calendar-day;
+        height: $dayHeight;
+        position: relative;
+        box-sizing: border-box;
+        &.active{
+            background-color: $blue; 
+            .cm-field-title,
+            .cm-field-price,
+            .cm-field-label{
+                color: #fff;
+            }
+        }
+        &.cm-item--disabled{
+            .cm-field-title,
+            .cm-field-price,
+            .cm-field-label{
+                color: $gray;
+            }
+        }
+    }
+    .cm-field-title{
+        line-height: 20px;
+        font-size: 16px;
+        padding-top: 8px;
+        box-sizing: border-box;
+    }
+    .cm-field-title--festival{
+        font-size: 14px;
+    }
+    .cm-field-price{
+        font-size: 12px;
+        color:#666;
+    }
+    .cm-field-price--sale{
+        color: $orange;
+    }
+    .cm-field-label{
+        font-size: 12px;
+    }
+    .cm-item--multi{
+        background-color: rgba(#099fde,0.1);
+    }
+    .icon-calendar-holiday,
+    .icon-calendar-work{
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: 1px solid $textColor;
+        line-height: 14px;
+        height: 16px;
+        width: 16px;
+        background:#fff;
+        text-align: center;
+        font-size: 12px;
+        transform: scale(0.7);
+        transform-origin: right top;
+        box-sizing: border-box;
+    }
+    .icon-calendar-holiday{
+        color: $blueLight;
+        border-color: $blueLight;
+    }
+}
+.cm-day-list--special{
+    li{
+        height: $dayHeight + 20px;
+    }
+}
+
+// fixed 布局
+.cm-calendar{
+    // padding-top: 30px;
+    .cm-calendar-hd{
+        border-bottom: 1px solid $borderColor;
+        background-color: #fff;
+        // @include fixed($barHeight);
+        height: 30px;
+        @extend %clearfix;
+        li{
+            @extend %calendar-day;
+            color: $blueLight;
+            line-height: 30px;
+        }
+    }
+    .cm-calendar-bd{
+        background-color: #fff;
+        padding-bottom: $barHeight;
+        // @extend %scroll-touch;
+    }
+    .cm-month{
+        text-align: center;
+        font-size: 16px;
+        line-height: 50px;
+    }
+    .cm-calendar-ft{
+        border-top: 1px solid $borderColor;
+        background-color: $bgColor;
+        @include fixed(bottom);
+        padding: 5px 0;
+
+        .cm-calendar-quick-nav{
+            @extend %clearfix;
+            width: 200%;
+        }
+        li{
+            float: left;
+            line-height: 30px;
+            width: 60px;
+            border-radius: $radiusBase;
+            text-align: center;
+            background-color: $gray;
+            margin: 0 5px 0 10px;
+            box-sizing: border-box;
+            &.active{
+                background-color: $blue;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.cm-calendar-tips{
+    width:14.2%;
+    color: #fff;
+    text-align: center;
+    border-radius: $radiusBase;
+    background-color: $blue;
+    position: relative;
+
+    &::after{
+        content: "";
+        position: absolute;
+        left: 50%;
+        margin-left: -6px;
+        bottom: -6px;
+        border-top: 6px solid $blue;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+    }
+    .cm-tips-day{
+        padding-bottom: 5px;
+        .cm-tips-day-title{
+            line-height: 28px;
+            font-size: 16px;
+        }
+        .cm-tips-day-label,
+        .cm-tips-day-price{
+            font-size: 12px;
+        }
+    }
+}

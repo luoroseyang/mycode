@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+	<meta content="yes"name="apple-mobile-web-app-capable"/>
+ 	<meta content="black"name="apple-mobile-web-app-status-bar-style"/>
+	<meta name="format-detection"content="telphone=no"/>
+	<link rel="stylesheet" href="../css/global.css">
+	<title>imgslide</title>
+    <script type="text/javascript" src="../js/zepto.1.1.3.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+    <script type="text/javascript" src="../js/swipe.js"></script>
+</head>
+<body>
+<header class="cm-header">
+    <span class="icon-back fl cm-header-icon"></span>
+    <span class="fr cm-header-icon"><i class="icon-list"></i></span>
+    <h1 class="cm-page-title">imgslide</h1>
+</header>
+<main id="pages" class="cm-page-wrap">
+    <article class="cm-page"> 
+        <div class="cm-content">
+            <div id="slider" class='cm-slide'>
+                <ul class="cm-slide-view">
+                    <li><img src="http://placehold.it/640x420&text=1" alt=""></li>
+                    <li><img src="http://placehold.it/640x420&text=2" alt=""></li>
+                    <li><img src="http://placehold.it/640x420&text=3" alt=""></li>
+                    <li><img src="http://placehold.it/640x420&text=4" alt=""></li>
+                    <li><img src="http://placehold.it/640x420&text=5" alt=""></li>
+                </ul>
+                <nav class="cm-slide-bullet"><i class="cm-bullet-item active"></i><i class="cm-bullet-item"></i><i class="cm-bullet-item"></i><i class="cm-bullet-item"></i><i class="cm-bullet-item"></i></nav>
+            </div>
+        </div>
+    </article>
+</main>
+<script type="text/javascript">
+    var $slider = document.getElementById('slider'),
+        $sliderNav = $slider.getElementsByClassName('cm-bullet-item'),
+        len = $sliderNav.length;
+
+    window.mySwipe = Swipe($slider,{
+        auto: 1000,
+        callback: function(index, elem) {
+            for(var i=0; i<len; i++){
+                $sliderNav[i].classList.remove('active');
+            }
+            $sliderNav[index].classList.add('active');
+        }
+    // transitionEnd: function(index, elem) {console.log(index)}
+    });
+    // mySwipe.slide(); 
+</script>
+</body>
+</html>

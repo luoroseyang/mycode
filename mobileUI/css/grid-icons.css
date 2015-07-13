@@ -1,0 +1,59 @@
+/*
+Error: File to import not found or unreadable: ../components/grid-icons.
+       Load paths:
+         d:/git.dev/thumb/sass/thumb
+         d:/Users/yc_xu/AppData/Local/Temp/gulp-ruby-sass
+        on line 8 of d:/Users/yc_xu/AppData/Local/Temp/gulp-ruby-sass/grid-icons.scss
+
+3: //---------------------------------------------------
+4: // grid-icons.scss
+5: //---------------------------------------------------
+6: 
+7: @import "../core/function";
+8: @import "../components/grid-icons";
+
+Backtrace:
+d:/Users/yc_xu/AppData/Local/Temp/gulp-ruby-sass/grid-icons.scss:8
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/tree/import_node.rb:66:in `rescue in import'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/tree/import_node.rb:45:in `import'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/tree/import_node.rb:28:in `imported_file'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/tree/import_node.rb:37:in `css_import?'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:301:in `visit_import'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/stack.rb:79:in `block in with_base'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/stack.rb:115:in `with_frame'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/stack.rb:79:in `with_base'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:158:in `visit'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:52:in `map'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:157:in `visit'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:8:in `visit'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/tree/root_node.rb:36:in `css_tree'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:285:in `render_with_sourcemap'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:489:in `update_stylesheet'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:209:in `each'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/plugin.rb:82:in `update_stylesheets'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/exec/sass_scss.rb:350:in `watch_or_update'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/exec/sass_scss.rb:50:in `process_result'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/exec/base.rb:52:in `parse'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/lib/sass/exec/base.rb:19:in `parse!'
+c:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.5/bin/sass:13:in `<top (required)>'
+c:/Ruby200-x64/bin/sass:23:in `load'
+c:/Ruby200-x64/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: ../components/grid-icons.\A        Load paths:\A          d:/git.dev/thumb/sass/thumb\A          d:/Users/yc_xu/AppData/Local/Temp/gulp-ruby-sass\A         on line 8 of d:/Users/yc_xu/AppData/Local/Temp/gulp-ruby-sass/grid-icons.scss\A \A 3: //---------------------------------------------------\A 4: // grid-icons.scss\A 5: //---------------------------------------------------\A 6: \A 7: @import \"../core/function\";\A 8: @import \"../components/grid-icons\";"; }

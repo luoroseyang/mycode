@@ -1,0 +1,21 @@
+.cm-pop--user-nav {
+  top: 44px;
+  right: 0;
+  color: #fff;
+  width: 128px;
+}
+.cm-pop--user-nav .icon-pop-triangle {
+  background-color: #283847;
+  left: auto;
+  right: 10px;
+}
+.cm-pop--user-nav .cm-pop-list li {
+  background-color: #283847;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.cm-pop--user-nav .cm-pop-list li i[class^="icon-"] {
+  margin-right: 10px;
+}
+.cm-pop--user-nav .cm-pop-list li:active, .cm-pop--user-nav .cm-pop-list li:hover {
+  background-color: #161e26;
+}

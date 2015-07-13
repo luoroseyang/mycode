@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------
+// rate.scss
+//-----------------------------------------------------
+
+@import "core/function";
+
+.cm-rate-view {
+    @extend %icon-bg;
+    width: 80px;
+    height: 15px;
+    background-position: -161px -98px;
+
+    .icon-rate {
+        @extend %icon-bg;
+        display: block;
+        height: 15px;
+        width: 100%;
+        background-position: -161px -80px;
+    }
+}

@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------
+// slide.scss
+//-----------------------------------------------------
+
+@import "core/function";
+
+.cm-slide {
+    overflow: hidden;
+    position: relative;
+    height: 210px;
+
+    .cm-slide-view{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .cm-slide-list{
+        @extend %clearfix;
+        width: 4000px;
+        position: absolute;
+
+        .cm-slide-item{
+            float: left;
+            box-sizing: border-box;
+        }
+    }
+    &.cm-slide--vertical{
+        .cm-slide-list{
+            width: 100%;
+            .cm-slide-item{
+                float: none;
+            }
+        }
+    }
+
+    .cm-slide-bullet {
+        position: absolute;
+        z-index: 99;
+        left: 0;
+        right: 0;
+        bottom: 10px;
+        text-align: center;
+        line-height: 1;
+        .cm-bullet-item {
+            font-style: normal;
+            font-size: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 5px;
+            margin: 2px;
+            &.active {
+                background-color: $blue;
+            }
+        }
+    }
+}
+.cm-slide--full-img{
+    img{
+        width: 100%;
+    }
+}

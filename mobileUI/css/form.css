@@ -1,0 +1,89 @@
+.form-item {
+  border-bottom: 1px solid #dbdbdb;
+  background-color: #fff;
+  line-height: 33px;
+  padding: 5px 10px;
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+.form-item:first-child {
+  border-top: 1px solid #dbdbdb;
+}
+.form-item:active, .form-item:hover {
+  background-color: whitesmoke;
+}
+
+.form-item.form-item--arrow::after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #ccc;
+  border-right: 2px solid #ccc;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  margin-top: -1px;
+  -webkit-transform: rotate(45deg) translateY(-50%);
+          transform: rotate(45deg) translateY(-50%);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.form-item {
+  padding: 0 0 0 90px;
+  line-height: 43px;
+  min-height: 44px;
+}
+.form-item:active, .form-item:hover {
+  background-color: #fff;
+}
+.form-item .field-label {
+  float: left;
+  width: 80px;
+  margin-left: -80px;
+}
+.form-item .field-text-wrap {
+  overflow: hidden;
+}
+.form-item .field-text {
+  height: 43px;
+  padding: 7px 5px;
+  border: 0 none;
+  width: 100%;
+}
+.form-item.form-item--arrow-btn {
+  padding-right: 30px;
+}
+.form-item.form-item--arrow-btn .icon-arrow {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.form-item.form-item--arrow {
+  padding-right: 25px;
+}
+.form-item.form-item--no-label {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.form--no-label .form-item {
+  padding-left: 0;
+}
+.form--no-label .form-item .field-text {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.textarea {
+  width: 100%;
+  border: 1px solid #dbdbdb;
+  padding: 5px;
+  border-radius: 4px;
+  height: 80px;
+}

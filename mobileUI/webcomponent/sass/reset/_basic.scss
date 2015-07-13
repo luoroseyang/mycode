@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------  
+// component basic scss
+//-----------------------------------------------------
+
+
+.js-shadow-dom,
+body {
+    font-family: $baseFont;
+    font-size: $baseFontSize;
+    line-height: $baseLineHeight;
+    color: $textColor;
+}
+
+figcaption,
+figure,
+footer,
+header,
+section {
+    display: block;
+}
+
+/* Links
+   ========================================================================== */
+
+/**
+ * 1. Remove the gray background color from active links in IE 10.
+ * 2. Improve readability when focused and also mouse hovered in all browsers.
+ * 0. sandal's style.
+ */
+
+a {
+    background: transparent; // 1
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    &:active {
+        outline: 0; // 2
+    }
+    @if length($linkColor) > 1 {
+        color: nth($linkColor, 1);
+        &:active {
+            color: nth($linkColor, 2);
+        }
+    }
+    @else {
+        color: $linkColor;
+        &:active {
+            color: darken($linkColor, 10%);
+        }
+    }
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+
+b,
+strong {
+    font-weight: bold;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * 1. Remove border when inside `a` element in IE 8/9/10.
+ * 2. Improve image quality when scaled in IE 7.
+ * 0. sandal's style.
+ */
+
+img {
+    border: 0; // 1
+    vertical-align: middle; // 0
+}
+
+
+h1,h2,h3,h4,h5,h6,p,figure {
+    margin: 0;
+}
+
+// ul ol dl
+ul,ol,li,dl,dd {
+    margin: 0;
+    padding: 0;
+}
+
+ul,ol {
+    list-style: none outside none;
+}
+
+// hn
+h1,h2,h3 {
+    line-height: 2;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 18px;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+// icon 
+i {
+    font-style: normal;
+}
+
+// 清除子元素浮动
+.clearfix{
+    @extend %clearfix;
+}

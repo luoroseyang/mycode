@@ -1,0 +1,142 @@
+.cm-gallery-list:before, .cm-gallery-list:after {
+  content: "";
+  display: table;
+}
+.cm-gallery-list:after {
+  clear: both;
+}
+
+.cm-slide {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 210px;
+}
+.cm-slide .cm-slide-view li {
+  position: absolute;
+  left: 0 !important;
+  right: 0;
+  width: 100%;
+  height: 210px;
+  text-align: center;
+}
+.cm-slide .cm-slide-view img {
+  max-width: 100%;
+}
+.cm-slide .cm-slide-bullet {
+  position: absolute;
+  z-index: 99;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  text-align: center;
+}
+.cm-slide .cm-slide-bullet .cm-bullet-item {
+  font-style: normal;
+  font-size: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 5px;
+  margin: 2px;
+}
+.cm-slide .cm-slide-bullet .cm-bullet-item.active {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.cm-gallery-list {
+  width: 320px;
+  margin: 0 auto;
+  padding: 10px 5px;
+}
+.cm-gallery-list li {
+  float: left;
+  width: 150px;
+  margin: 0 10px 10px 0;
+}
+.cm-gallery-list li:nth-of-type(2n) {
+  margin-right: 0;
+}
+.cm-gallery-list img {
+  width: 150px;
+  height: 128px;
+}
+
+.cm-gallery-nav {
+  background: #333;
+  color: white;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.cm-gallery-nav .cm-prev, .cm-gallery-nav .cm-next {
+  float: left;
+  width: 25%;
+}
+.cm-gallery-nav .cm-nums {
+  float: left;
+  width: 50%;
+  border: 1px solid #3E3E3E;
+  border-width: 0 1px;
+}
+.cm-gallery-nav .disabled {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.cm-gallery .cm-gallery-slide {
+  height: 160px;
+  position: relative;
+  overflow: hidden;
+}
+.cm-gallery .cm-gallery-slide li {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: center;
+}
+.cm-gallery .cm-gallery-slide img {
+  max-width: 100%;
+  max-height: 160px;
+}
+
+@media screen and (orientation: portrait) {
+  .cm-gallery .cm-gallery-slide {
+    position: absolute;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0);
+    margin-top: -30px;
+  }
+  .cm-gallery .cm-gallery-title {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 70px;
+    padding: 0 10px;
+    text-align: center;
+  }
+}
+@media screen and (orientation: landscape) {
+  .cm-gallery .cm-gallery-slide {
+    margin: 10px 0;
+  }
+  .cm-gallery .cm-gallery-slide li {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+  }
+  .cm-gallery .cm-gallery-title {
+    padding: 0 10px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AA4UA,gCAAU;EA7MN,OAAO,EAAE,KAAK;EACd,YAAY,EAAE,KAAK;EACnB,KAAK,EAAE,IAAI;;AAGP,mCAAa;EACT,OAAO,EAAE,UAAU;;;AC/H/B,YAAa;EACT,QAAQ,EAAE,QAAQ;EAClB,aAAa,EAAE,iBAAsB;EACrC,WAAW,ECWkB,IAAI;;ADR7B,mCAAE;EACE,UAAU,EAAE,MAAM;;AAClB,0CAAS;EACL,KAAK,EC0CY,OAAK;;ADtClC,yBAAa;EACT,QAAQ,EAAE,QAAQ;EAClB,IAAI,EAAE,CAAC;EACP,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,GAAG;EACX,gBAAgB,ECgCS,OAAK;ED/B9B,SAAS,EAAE,qBAAqB",
+"sources": ["../../../../../../../git.dev/thumb/sass/core/_mixin.scss","../../../../../../../git.dev/thumb/sass/components/_tabs.scss","../../../../../../../git.dev/thumb/sass/core/_variables.scss"],
+"names": [],
+"file": "tabs.css"
+}

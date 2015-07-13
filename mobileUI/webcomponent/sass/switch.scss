@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------
+// icon switch.scss
+//-----------------------------------------------------
+
+@import "core/function";
+
+// icon switch
+.icon-switch {
+    $iconToggleSize: 28px;
+    height: $iconToggleSize;
+    width: $iconToggleSize * 2 - 10px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #CCCCCC;
+    border-radius: $iconToggleSize / 2;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+    &::before {
+        content: "";
+        height: $iconToggleSize;
+        width: $iconToggleSize * 2 - 10px;
+        position: absolute;
+        left: -$iconToggleSize * 2 + 10px;
+        background-color: #099FDE;
+        border-radius: $iconToggleSize / 2;
+        transition: left 0.2s ease 0s;
+        z-index: 2;
+    }
+    &::after {
+        content: "";
+        height: $iconToggleSize - 4px;
+        width: $iconToggleSize - 4px;
+        background-color: #fff;
+        border-radius: $iconToggleSize / 2;
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        transition: left 0.2s ease 0s;
+        z-index: 3;
+    }
+    &.active{
+        &::before {
+            left: 0;
+        }
+        &::after {
+            left: $iconToggleSize - 8px;
+        }
+    }
+}

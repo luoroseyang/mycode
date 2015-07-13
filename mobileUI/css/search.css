@@ -1,0 +1,74 @@
+.cm-search-block .icon-clear {
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: center;
+  cursor: pointer;
+}
+.cm-search-block .icon-clear::before, .cm-search-block .icon-clear::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 16px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 50%;
+  margin-top: -8px;
+}
+.cm-search-block .icon-clear::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.cm-search-block {
+  background-color: #e6f1f7;
+  padding: 7px;
+  position: relative;
+}
+.cm-search-block .cm-search-ele-wrap {
+  position: relative;
+}
+.cm-search-block .cm-search-text {
+  border: 0 none;
+  border-radius: 15px;
+  background-color: #fff;
+  width: 100%;
+  height: 30px;
+  padding: 5px 30px;
+}
+.cm-search-block .icon-search {
+  border-color: #999;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+}
+.cm-search-block .icon-search::after {
+  background: #999;
+}
+.cm-search-block .icon-clear {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+.cm-search-block .icon-clear::before, .cm-search-block .icon-clear::after {
+  background-color: #999;
+}
+.cm-search-block .icon-loading {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+}
+
+.cm-search-block--cancel .cm-search-ele-wrap {
+  position: relative;
+  margin-right: 50px;
+}
+.cm-search-block--cancel .cm-search-cancel {
+  line-height: 44px;
+  padding: 0 10px;
+  color: #099fde;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}

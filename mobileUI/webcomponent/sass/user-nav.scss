@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------
+// user-nav.scss
+//-----------------------------------------------------
+
+@import "core/function";
+
+.icon-tel {
+    @extend %icon-bg;
+    width: 20px;
+    height: 20px;
+    background-position: -23px -50px;
+}
+
+.icon-home {
+    @extend %icon-bg;
+    width: 20px;
+    height: 20px;
+    background-position: 0 -52px;
+}
+
+.icon-loved {
+    @extend %icon-bg;
+    width: 20px;
+    height: 20px;
+    background-position: -47px -50px;
+}
+
+.icon-love {
+    @extend %icon-bg;
+    width: 20px;
+    height: 20px;
+    background-position: -71px -50px;
+}
+
+.icon-comment {
+    @extend %icon-bg;
+    width: 20px;
+    height: 20px;
+    background-position: -97px -50px;
+}
+
+.icon-compass {
+    @extend %icon-bg;
+    width: 20px;
+    height: 20px;
+    background-position: -123px -50px;
+}
+
+.icon-file {
+    @extend %icon-bg;
+    width: 20px;
+    height: 20px;
+    background-position: -147px -50px;
+}
+
+.icon-share {
+    @extend %icon-bg;
+    width: 20px;
+    height: 20px;
+    background-position: -172px -50px;
+}
+
+.icon-email {
+    @extend %icon-bg;
+    width: 20px;
+    height: 20px;
+    background-position: -198px -51px;
+}
+
+.icon-sale {
+    @extend %icon-bg;
+    width: 20px;
+    height: 20px;
+    background-position: -221px -51px;
+}
+
+.icon-service{
+    @extend %icon-bg;
+    width: 20px;
+    height: 20px;
+    background-position: -50px -124px;    
+}
+
+.cm-pop--user-nav {
+    color: #fff;
+    width: 128px;
+    
+    .icon-pop-triangle{
+        background-color: $blueDark;
+        left: auto;
+        right: 10px;
+        // top: -5px;
+    }
+    .cm-pop-list{
+        li {
+            background-color: $blueDark;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            i[class^="icon-"] {
+                margin-right: 10px;
+            }
+            &:active, &:hover {
+                background-color: darken($blueDark, 10%);
+            }
+        }
+    }
+}

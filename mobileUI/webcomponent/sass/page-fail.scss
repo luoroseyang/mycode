@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------
+// page-fail.scss
+//-----------------------------------------------------
+@import "core/function";
+
+.icon-offline {
+    @extend %icon-bg;
+    width: 38px;
+    height: 38px;
+    background-position: -130px 0;
+}
+
+.cm-page-fail {
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    .cm-fail-info {
+        margin: 15px 0;
+    }
+    .cm-fail-redo {
+        padding-top: 40px;
+        margin-bottom: 20px;
+        .cm-fail-info {
+            font-size: 16px;
+        }
+    }
+    .cm-fail-service {
+        border-top: 1px solid $borderColor;
+    }
+    .cm-fail-redo-btn,
+    .cm-fail-service-btn{
+        line-height: 44px;
+        height: 44px;
+        padding: 0 10px;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .cm-fail-redo-btn{
+        background-color: #ff9a14;
+        color: #fff;
+        &:hover,
+        &:active{
+            background-color: #e08000;
+        }
+    }
+    .cm-fail-service-btn{
+        background-color: #fff;
+        border: 1px solid #dbdbdb;
+        color: #099fde;
+        &:hover,
+        &:active{
+            background-color: #e6e6e6;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+.cm-nav {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.cm-nav li {
+  display: table-cell;
+}
+
+.cm-nav {
+  background-color: #283847;
+  height: 48px;
+  text-align: center;
+  color: #fff;
+}
+.cm-nav li {
+  padding: 5px 0;
+  position: relative;
+  line-height: 38px;
+  cursor: pointer;
+}
+.cm-nav .active {
+  background-color: #283847;
+  color: #30a8ff;
+}
+.cm-nav .cm-nav-icon {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 5px;
+}
+
+.cm-nav--mix-v {
+  font-size: 12px;
+}
+.cm-nav--mix-v li {
+  padding: 5px 0;
+  line-height: 17px;
+}
+.cm-nav--mix-v .cm-nav-icon {
+  width: 22px;
+  height: 22px;
+  display: block;
+  margin: 0 auto;
+}

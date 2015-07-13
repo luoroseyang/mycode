@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------
+// tabs.scss
+//-----------------------------------------------------
+
+@import "core/function";
+
+.cm-tabs-nav {
+    position: relative;
+    border-bottom: 1px solid $borderColor;
+    line-height: $barHeight;
+    .cm-tabs-title-list{
+        @extend %equal-col;
+        li{
+            text-align: center;
+            box-sizing: border-box;
+            &.active {
+                color: $primary;
+            }
+        }
+    }
+    .icon-active {
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 50%;
+        height: 4px;
+        background-color: $primary;
+        transition: left 0.3s ease-in-out;
+    }
+}

@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+	<meta content="yes"name="apple-mobile-web-app-capable"/>
+ 	<meta content="black"name="apple-mobile-web-app-status-bar-style"/>
+	<meta name="format-detection"content="telphone=no"/>
+    <link rel="stylesheet" href="css/basic.css">
+	<link rel="stylesheet" href="css/modal.css">
+	<title>modal</title>
+    <script type="text/javascript" src="../../js/zepto.1.1.3.js"></script>
+    <script type="text/javascript" src="../../js/script.js"></script>
+    <style type="text/css">
+.cm-modal{
+    margin-bottom: 20px;
+}
+body{
+    background-color: #efefef;
+}
+    </style>
+</head>
+<body>
+<header class="cm-header">
+    <span class="icon-back fl cm-header-icon"></span>
+    <h1 class="cm-page-title">modal</h1>
+</header>
+<div id="pages" class="cm-page-wrap">
+    <article class="cm-page">
+        <main class="cm-content">
+        </main>
+    </article>
+</div>
+
+<section class="cm-modal">
+    <header class="cm-modal-hd">
+        <h3 class="cm-modal-title">浮层标题</h3>
+        <i class="icon-close"></i>
+    </header>
+    <div class="cm-modal-bd p10">
+        <p>浮层内容</p>
+    </div>
+</section>
+<section class="cm-modal">
+    <header class="cm-modal-hd cm-modal-hd--tint">
+        <h3 class="cm-modal-title">浮层标题</h3>
+        <i class="icon-close"></i>
+    </header>
+    <div class="cm-modal-bd p10">
+        <p>浮层内容</p>
+    </div>
+</section>
+<section class="cm-modal cm-modal--no-header">
+    <div class="cm-modal-bd p10">
+        <p>不含标题</p>
+    </div>
+</section>
+<section class="cm-modal">
+    <header class="cm-modal-hd cm-modal-hd--center">
+        <h3 class="cm-modal-title">菜单标题</h3>
+    </header>
+    <div class="cm-modal-bd">
+        <ul class="cm-radio-list">
+            <li class="active">选项一</li>
+            <li>选项二</li>
+            <li>选项三</li>
+        </ul> 
+    </div>
+</section>
+<section class="cm-modal cm-modal--ft">
+    <header class="cm-modal-hd cm-modal-hd--center">
+        <h3 class="cm-modal-title">菜单标题</h3>
+    </header>
+    <div class="cm-modal-bd">
+        <ul class="cm-checkbox-list">
+            <li class="active"><i class="icon-checkbox"></i>选项一</li>
+            <li><i class="icon-checkbox"></i>选项二</li>
+            <li><i class="icon-checkbox"></i>选项三</li>
+        </ul>
+    </div>
+    <footer class="cm-modal-ft cm-actions">
+        <span class="cm-actions-btn">取消</span>
+        <span class="cm-actions-btn">确定</span>
+    </footer>
+</section>
+<section class="cm-modal cm-modal--action">
+    <div class="cm-modal-bd">
+        <ul class="cm-actions cm-actions--full">
+            <li class="cm-actions-btn">操作1</li>
+            <li class="cm-actions-btn">操作2</li>
+            <li class="cm-actions-btn">操作3</li>
+        </ul>
+    </div>
+    <footer class="cm-modal-ft cm-actions">
+        <span class="cm-actions-btn">取消</span>      
+    </footer>
+</section>
+</body>
+</html>

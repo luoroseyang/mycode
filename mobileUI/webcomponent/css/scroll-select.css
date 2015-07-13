@@ -1,0 +1,97 @@
+.cm-scroll-select .cm-select-list li {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cm-scroll-select-group,
+.cm-scroll-select {
+  overflow: hidden;
+  position: relative;
+}
+
+.cm-scroll-select {
+  height: 180px;
+  background-color: #fff;
+  font-size: 16px;
+}
+
+.cm-scroll-select .cm-select-list {
+  text-align: center;
+  line-height: 36px;
+  color: #cccccc;
+}
+
+.cm-scroll-select .cm-select-list li {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.cm-scroll-select .cm-select-list li.active {
+  color: #333333;
+}
+
+.cm-scroll-select::before,
+.cm-scroll-select::after {
+  content: "";
+  height: 1px;
+  background-color: #099fde;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  margin-top: -18px;
+}
+
+.cm-scroll-select::after {
+  margin-top: 18px;
+}
+
+.cm-select-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(45%, rgba(255, 255, 255, 0)), color-stop(55%, rgba(255, 255, 255, 0)), color-stop(60%, rgba(255, 255, 255, 0)), color-stop(100%, white));
+  background: -webkit-linear-gradient(top, white 0%, rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 60%, white 100%);
+  background: -webkit-gradient(linear, top left, bottom left, from(white), color-stop(45%, rgba(255, 255, 255, 0)), color-stop(55%, rgba(255, 255, 255, 0)), color-stop(60%, rgba(255, 255, 255, 0)), to(white));
+  background: linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 60%, white 100%);
+}
+
+.cm-scroll-select-group--birthday h3 {
+  border-bottom: 1px solid #dbdbdb;
+  line-height: 44px;
+  text-align: center;
+}
+
+.cm-scroll-select-group--birthday .cm-scroll-select::before,
+.cm-scroll-select-group--birthday .cm-scroll-select::after {
+  left: 3px;
+  right: 3px;
+}
+
+.cm-scroll-select-tips {
+  text-align: center;
+  line-height: 30px;
+}
+
+.cm-scroll-select-group .cm-scroll-select-wrap {
+  float: left;
+  width: 50%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.cm-scroll-select-group--birthday .cm-scroll-select-wrap {
+  float: left;
+  width: 33.3%;
+  margin: 5px 0;
+  border-right: 1px solid #dbdbdb;
+}
+
+.cm-scroll-select-group--birthday .cm-scroll-select-wrap:nth-last-of-type(1) {
+  border-right: none;
+}

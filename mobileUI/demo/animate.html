@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+	<meta content="yes"name="apple-mobile-web-app-capable"/>
+ 	<meta content="black"name="apple-mobile-web-app-status-bar-style"/>
+	<meta name="format-detection"content="telphone=no"/>
+	<link rel="stylesheet" href="../css/global.css">
+	<title>animate</title>
+    <script type="text/javascript" src="../js/zepto.1.1.3.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+    <style type="text/css">
+    .demo1 span{margin: 10px;}
+    .cm-modal,.cm-pop,.cm-loading,.cm-page-pop{
+        display: none;
+    }
+    .cm-overlay.active{
+        display: block;
+    }
+    h3{
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+<div id="overlay" class="cm-overlay"></div>
+<header class="cm-header">
+    <span class="icon-back fl cm-header-icon"></span>
+    <h1 class="cm-page-title">animate</h1>
+</header>
+<main id="pages" class="cm-page-wrap">
+    <article class="cm-page">    
+        <div class="cm-content">
+            <div class="demo1">
+                <span class="btn btn-modal">渐隐弹出modal</span>
+                <span class="btn btn-loading">从上弹出loading</span>
+                <span class="btn btn-pop">从上弹出pop</span>
+                <span class="btn btn-pop-page">从下弹出pop-page</span>
+            </div>
+            <h2 class="guide-title">使用说明</h2>
+            <div class="p10">
+                <p>总共设计了三种动画，每个动画又分为in和out状态</p>
+                <h3>fade in/out</h3>
+                <p>涉及动画属性transform的translate和scale，opacity</p>
+                <p>这组动画适合使用于水平，垂直都居中的元素，如modal，loading，tips等。之所以限制了水平垂直居中元素，因为动画中设置了translate的50%居中（没办法，transform的属性不能叠加）</p>
+                <h3>down in/out</h3>
+                <p>涉及动画属性transform的translate</p>
+                <p>适合于pop page这种整屏弹出，或从底部弹出的一些特效</p>
+                <h3>up in/out</h3>
+                <p>涉及动画属性transform的translate</p>
+                <p>适合绝对定位的pop弹出</p>
+                <h3>center-up in/out</h3>
+                <p>涉及动画属性transform的translate</p>
+                <p>适合第一种水平和垂直都居中的元素，从上面弹出</p>
+            </div>
+        </div>
+    </article>
+</main>
+
+<section class="cm-modal">
+    <header class="cm-modal-hd">
+        <h3 class="cm-modal-title">浮层标题</h3>
+        <i class="icon-close"></i>
+    </header>
+    <div class="cm-modal-bd p10">
+        <p>浮层内容</p>
+    </div>
+</section>
+<section class="cm-loading">
+    <i class="icon-loading"><span class="icon-loading-circle"></span></i>
+</section>
+<section class="cm-pop">
+    <i class="icon-pop-triangle icon-pop-triangle--up"></i>
+    <div class="cm-pop-bd p10">
+        <p>pop内容</p>
+        <p>pop内容</p>
+        <p>pop内容</p>
+    </div>
+</section>
+<section class="cm-page-pop">
+    <header class="cm-header">
+        <span class="icon-back fl cm-header-icon"></span>
+        <h1 class="cm-page-title">pop title</h1>
+    </header>
+    <div class="cm-pop-bd">
+        <div class="cm-scroll-inner p10">pop content</div>
+    </div>
+</section>
+<script type="text/javascript">
+$(function(){
+    var $overlay = $('#overlay'),
+        $modal = $('.cm-modal'),
+        $popPage = $('.cm-page-pop'),
+        $loading = $('.cm-loading'),
+        $pop = $('.cm-pop');
+
+    // modal 弹窗
+    // 采用渐隐透明出现
+    $('.btn-modal').on('click', function(){
+        $overlay.addClass('active');
+        $modal.css("display","block").addClass('cm-fade-in');
+    })
+    $('.icon-close').add($overlay).on('click', function(){
+        $overlay.removeClass('active');
+        $modal.addClass('cm-fade-out');
+        $modal.one('animationend',function(){
+            $(this).css("display","none").removeClass('cm-fade-in cm-fade-out');
+        });
+    })
+
+    // pop
+    // 采用translate从上往下显示
+    $pop.css({'left': 50, 'top': 170, 'width': 140});
+
+    $('.btn-pop').on('click', function(){
+        $overlay.addClass('active');
+        $pop.css("display","block").addClass('cm-up-in');
+    })
+    $overlay.on('click', function(){
+        $overlay.removeClass('active');
+        $pop.addClass('cm-up-out');
+        $pop.one('animationend',function(){
+            $(this).css("display","none").removeClass('cm-up-in cm-up-out');
+        });
+    })
+
+    // pop page 
+    // 采用translate从下往上显示
+    $('.btn-pop-page').on('click', function(){
+        $popPage.css("display","block").addClass('cm-down-in');
+    })
+    $('.cm-page-pop .icon-back').on('click', function(){
+        $popPage.addClass('cm-down-out');
+        $popPage.one('animationend',function(){
+            $(this).css("display","none").removeClass('cm-down-in cm-down-out');
+        });
+    })
+
+    // loading
+    // 显示居中元素的从上向下动画
+    $('.btn-loading').on('click', function(){
+        $loading.css("display","block").addClass('cm-up-in');
+        setTimeout(function(){
+            $loading.addClass('cm-up-out').one('animationend',function(){
+            $(this).css("display","none").removeClass('cm-up-in cm-up-out');});
+        },2000);
+    })
+    
+})
+</script>
+</body>
+</html>

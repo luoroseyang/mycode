@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+//---------------------------------------------------
+// id-card.scss
+//---------------------------------------------------
+
+@import "core/function";
+
+.btn-secondary {
+    @extend %btn;
+    @include btn-color($blue, #fff);
+    border: 0 none;
+}
+
+.icon-del{
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    line-height: 1;
+    border: 1px solid $textColor;
+    border-left: none;
+    position: relative;
+    border-radius: 0 $radiusBase $radiusBase 0 0;
+    margin-left: 6px;
+    box-sizing: border-box;
+    
+    &::before {
+        content: "";
+        width: 12px;
+        height: 12px;
+        border: 1px solid $textColor;
+        border-width: 1px 0 0 1px;
+        transform: rotate(-45deg);
+        position: absolute;
+        left: -6px;
+        top: 1px;
+        box-sizing: border-box;
+    }
+    .icon-close{
+        @include close-btn;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: 2px;
+        &::before,
+        &::after{
+            background-color: $textColor;
+            width: 1px;
+            height: 10px;
+        }
+    }
+}
+
+.cm-modal--num-keyboard{
+    width: 100%;
+    border-radius: 0;
+    .cm-keyboard-bar{
+        background-color: darken($bgColor, 5%);
+        padding-right: 10px;
+        height: $barHeight;
+        line-height: $barHeight;
+        border-top: 1px solid $borderColor;
+        .btn-secondary{
+            line-height: 30px;
+            height: 30px;
+            padding: 0 15px;
+            float: right;
+            margin-top: 7px;
+        }
+    }
+}
+.cm-keyboard-list{
+    @extend %clearfix;
+    font-size: 16px;
+    // background-color: #fff;
+    li{
+        float: left;
+        text-align: center;
+        width: 33%;
+        line-height: 54px;
+        border: 1px solid $borderColor;
+        border-width: 1px 1px 0 0;
+        box-sizing: border-box;
+        
+        &:active{
+            background-color: $bgColor;
+        }
+        &:nth-of-type(3n+3){
+            width: 34%;
+            border-right: none;
+        }
+        &:last-of-type,
+        &:nth-last-of-type(3){
+            background-color: darken($bgColor, 5%);
+        }
+    }
+    .icon-del{
+        top: 2px;
+    }
+}

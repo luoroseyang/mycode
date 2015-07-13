@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+	<meta content="yes"name="apple-mobile-web-app-capable"/>
+ 	<meta content="black"name="apple-mobile-web-app-status-bar-style"/>
+	<meta name="format-detection"content="telphone=no"/>
+	<link rel="stylesheet" href="../thumb/global.core.css">
+	<title>form</title>
+    <script type="text/javascript" src="../js/zepto.1.1.3.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body>
+<header class="cm-header">
+    <h1 class="cm-page-title">form</h1>
+</header>
+<div id="pages" class="cm-page-wrap">
+    <article class="cm-page">
+        <main class="cm-content">
+            <h2 class="guide-title">form表单填写</h2>
+            <form class="form">
+                <div class="form-item">
+                    <label class="field-label">Email</label>
+                    <input type="text" class="field-text">
+                </div>
+                <div class="form-item form-item--arrow-btn">
+                    <label class="field-label">入住人</label>
+                    <input type="text" class="field-text" placeholder="输入入住人姓名">
+                    <i class="icon-arrow"></i>
+                </div>
+                <div class="form-item form-item--arrow-btn">
+                    <label class="field-label">联系电话</label>
+                    <input type="text" class="field-text" placeholder="用于接收通知">
+                    <i class="icon-arrow"></i>
+                </div>
+                <div class="form-item form-item--arrow-btn">
+                    <label class="field-label">证件类型</label>
+                    <span class="fr">身份证</span>
+                    <div class="field-text-wrap">
+                        <input type="text" class="field-text">
+                    </div>
+                    <i class="icon-arrow"></i>
+                </div>
+                <div class="form-item form-item--arrow">
+                    <label class="field-label">到店时间</label>
+                    <span class="fr">20:00之前</span>
+                </div>
+                <div class="form-item form-item--arrow">
+                    <label class="field-label">价格</label>
+                    <span class="field-value">不限</span>
+                </div>
+                <div class="form-item form-item--arrow">
+                    <label class="field-label">酒店名称</label>
+                    <span class="field-value grayc">中文/英文</span>
+                </div>
+            </form>
+            <h2 class="guide-title">placeholder作为label</h2>
+            <form action="" class="form form--no-label">
+                <div class="form-item form-item--arrow-btn">
+                    <input type="text" class="field-text" placeholder="placeholder作为label">
+                    <i class="icon-arrow"></i>
+                </div>
+            </form>
+            <div class="p10">
+                <textarea class="textarea"></textarea>
+            </div>
+            
+        </main>
+    </article>
+</div>
+</body>
+</html>

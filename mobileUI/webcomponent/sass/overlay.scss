@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------
+// slide.scss
+//-----------------------------------------------------
+
+@import "core/function";
+
+// overlay
+.cm-overlay{
+    display: none;
+    background: $overlayBg;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $zIndexOverlay;
+    &.active{
+        display: block;
+    }
+    &.cm-overlay--transparent{
+        background:rgba(0,0,0,0);
+    }
+}
+.cm-overlay-out{
+    animation-duration: 0.1s;
+    animation-delay: 0.3s;
+    animation-name: overlayOut;   
+}
+@keyframes overlayOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

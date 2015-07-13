@@ -1,0 +1,22 @@
+.cm-rate-view,
+.cm-rate-view .icon-rate {
+  background-image: url(http://pic.c-ctrip.com/h5/common/bg-global.png);
+  background-repeat: no-repeat;
+  -webkit-background-size: 240px auto;
+  background-size: 240px auto;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.cm-rate-view {
+  width: 80px;
+  height: 15px;
+  background-position: -161px -98px;
+}
+
+.cm-rate-view .icon-rate {
+  display: block;
+  height: 15px;
+  width: 100%;
+  background-position: -161px -80px;
+}

@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+	<meta content="yes"name="apple-mobile-web-app-capable"/>
+ 	<meta content="black"name="apple-mobile-web-app-status-bar-style"/>
+	<meta name="format-detection"content="telphone=no"/>
+	<link rel="stylesheet" href="../css/global.css">
+	<title>layout</title>
+    <script type="text/javascript" src="../js/zepto.1.1.3.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+    <style type="text/css">
+    pre{
+        background-color: #fff;
+    }
+    .decimal-list{
+        list-style: decimal;
+        padding-left: 20px;
+    }
+    </style>
+</head>
+<body>
+<header class="cm-header">
+    <span class="icon-back fl cm-header-icon"></span>
+    <h1 class="cm-page-title">layout</h1>
+</header>
+<main id="pages" class="cm-page-wrap">
+    <article class="cm-page">
+        <div class="cm-content">
+            <h2 class="guide-title">常规布局</h2>
+            <pre>&lt;!-- 遮罩层 --&gt;   
+&lt;div class="cm-overlay"&gt;&lt;/div&gt; 
+
+&lt;!-- 头部 --&gt;  
+&lt;header class="cm-header"&gt;&lt;/header&gt;
+
+&lt;!-- 中间内容容器层 --&gt;  
+&lt;div id="pages" class="cm-page-wrap"&gt;    
+    &lt;!-- 页面1 --&gt;
+    &lt;article class="cm-page"&gt;    
+        &lt;!-- 中间内容滚动层 --&gt; 
+        &lt;main class="cm-content"&gt;    
+            ...
+        &lt;/main&gt;
+
+        &lt;!-- 底部 --&gt;    
+        &lt;footer class="cm-footer"&gt;&lt;/footer&gt;
+    &lt;/article&gt;
+
+    &lt;!-- 页面2 --&gt;
+    &lt;article class="cm-page"&gt;&lt;/article&gt;   
+    ...
+&lt;/div&gt;
+
+&lt;!-- 交互层如pop,tips,modal,panel等 --&gt; 
+&lt;section&gt;   
+&lt;/section&gt;
+...
+</pre>
+            <h2 class="guide-title">使用说明：</h2>
+            <div class="p10">
+                <ol class="decimal-list">
+                    <li>'.cm-overlay'作为交互的蒙版层</li>
+                    <li>header和footer采用fixed定位，header独立出来（适合hybrid干掉头部），footer放在单个页面里面</li>
+                    <li>#pages作为所有页面的容器，一个article.cm-page代表一个页面，每个article都可以独立布局
+    页面切换发生在article.cm-page上，class分别为'.cm-page--left','.cm-page--right'，切换动画分别为：'.cm-page--in','.cm-page--out'</li>
+                    <li>默认article.cm-page的padding-top为header的高度，且额外提供了一个扩展的class'.has-header'来取消padding-top，当然也可以给上面的article一个特殊的class，来设置里面的布局</li>
+                    <li>除此之外，提供了两个class来设置页面的padding，分别为'.p10','.plr10'，可以挂靠在`.cm-content`中的标签上</li>
+                    <li>拥有底部footer的，需要在`.cm-content`中再添加一层结构来空出footer占的位置，可参看nav的demo</li>
+                    <li>如果除header外，上面还有需要fixed定位的元素，请在`.cm-content`前面添加`.cm-header-sub`，可参考search的demo，或自定义，可参考calendar的demo</li>
+                    <li>所有的交互层插在body结束之前</li>
+                </ol>
+                <p>注：当父元素设置了transform值的时候，子元素的fixed的定位方式不再是根元素，而是transform的父元素</p>                
+            </div>
+        </div>
+    </article>
+</main>
+</body>
+</html>

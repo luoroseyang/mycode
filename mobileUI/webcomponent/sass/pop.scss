@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------
+// pop.scss
+//-----------------------------------------------------
+
+@import "core/function";
+.p10{
+    padding: 10px;
+}
+
+.cm-pop {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+
+    .icon-pop-triangle {
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        margin-left: -5px;
+        transform: rotate(45deg);
+        box-sizing: border-box;
+    }
+    .cm-pop-bd{
+        background-color: #fff;
+        position: relative;
+    }
+    .cm-pop-list{
+        li{
+            @extend %bar-line;
+            box-sizing: border-box;
+            // position: relative;
+            &:first-child{
+                border-top: none;
+            }
+            &:last-child{
+                border-bottom: none;
+            }
+            &.active,
+            &:active{
+                background-color: $blue;
+                color: #fff;
+            }
+        }
+    }
+    .cm-pop-list--checked{
+        li {
+            padding-right: 30px;
+            
+            &.active {
+                background-color: #fff;
+                color: $primary;
+                &::after {
+                    content: "";
+                    width: 14px;
+                    height: 6px;
+                    border-bottom: 2px solid $primary;
+                    border-left: 2px solid $primary;
+                    position: absolute;
+                    top: 50%;
+                    right: 8px;
+                    margin-top: -4px;
+                    transform: rotate(-45deg) translateY(-50%);
+                }
+            }
+        }
+    }
+}
+
+.cm-pop--triangle-up{
+    .icon-pop-triangle{
+        top: -5px;
+    }
+}
+
+.cm-pop--border{
+    border: 1px solid $borderColor;
+    .icon-pop-triangle{
+        border: 1px solid $borderColor;
+        border-color: #fff $borderColor $borderColor #fff;
+    }
+    &.cm-pop--triangle-up{
+        .icon-pop-triangle{
+            border-color: $borderColor #fff #fff $borderColor;
+        }
+    }
+    &.cm-pop--radius{
+        border-radius: $radiusBase + 2;
+    }
+}
+.cm-pop--radius{
+    .cm-pop-bd{
+        border-radius: $radiusBase;
+        overflow: hidden;
+    }
+    // .cm-pop-list{
+    //     li:first-child{
+    //         border-radius: 5px 5px 0 0;
+    //     }
+    //     li:last-child{
+    //         border-radius: 0 0 5px 5px;
+    //     }
+    // }
+}
+
+.cm-page-pop {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $bgColor;
+    z-index: $zIndexOverlay + 5;
+    .cm-pop-bd {
+        position: absolute;
+        top: $barHeight;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 0;
+    }
+}

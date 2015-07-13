@@ -1,0 +1,144 @@
+.btn, .btn-primary, .btn-secondary, .btn-sub {
+  line-height: 44px;
+  height: 44px;
+  padding: 0 10px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn {
+  background-color: #fff;
+  color: #099fde;
+  border: 1px solid #dbdbdb;
+}
+.btn:active {
+  background: #e6e6e6;
+}
+
+.disabled[class^="btn"] {
+  background-color: #b2b2b2 !important;
+  color: #fff !important;
+  cursor: default !important;
+}
+
+.btn-primary {
+  background-color: #ff9a14;
+  color: #fff;
+  border: 0 none;
+}
+.btn-primary:active {
+  background: #e08000;
+}
+
+.btn-secondary {
+  background-color: #099fde;
+  color: #fff;
+  border: 0 none;
+}
+.btn-secondary:active {
+  background: #077cad;
+}
+
+.btn-sub {
+  background-color: #52bce8;
+  color: #fff;
+  border: 0 none;
+}
+.btn-sub:active {
+  background: #25abe2;
+}
+
+.btn-link {
+  color: #099fde;
+  line-height: 44px;
+  display: inline-block;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.btns-group {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  border: 1px solid #dbdbdb;
+  border-width: 1px 0;
+  background-color: #fff;
+}
+.btns-group .btn {
+  display: table-cell;
+}
+.btns-group .btn {
+  border: none;
+  border-radius: 0;
+  position: relative;
+}
+.btns-group .btn.disabled {
+  color: #ccc !important;
+  background: none !important;
+}
+.btns-group .btn.btn-red {
+  color: #ff4136;
+}
+.btns-group .btn::before {
+  content: "";
+  width: 1px;
+  height: 30px;
+  background-color: #dbdbdb;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 7px;
+}
+.btns-group .btn:first-child::before {
+  display: none;
+}
+
+.btns-seperate-group {
+  text-align: right;
+  height: 44px;
+  border: 1px solid #dbdbdb;
+  border-width: 1px 0;
+  background-color: #fff;
+}
+.btns-seperate-group span[class^="btn"] {
+  line-height: 32px;
+  height: 32px;
+  margin: 5px 10px 0 0;
+}
+
+.cm-actions {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.cm-actions .cm-actions-btn {
+  display: table-cell;
+}
+.cm-actions .cm-actions-btn {
+  color: #099fde;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  border-top: 1px solid #dbdbdb;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.cm-actions .cm-actions-btn:first-child {
+  border-left: none;
+}
+.cm-actions .cm-actions-btn:active {
+  background: #e6e6e6;
+}
+
+.cm-actions--full {
+  display: block;
+}
+.cm-actions--full .cm-actions-btn {
+  display: block;
+  width: 100%;
+  border-left: none;
+}

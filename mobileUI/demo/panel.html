@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+	<meta content="yes"name="apple-mobile-web-app-capable"/>
+ 	<meta content="black"name="apple-mobile-web-app-status-bar-style"/>
+	<meta name="format-detection"content="telphone=no"/>
+	<link rel="stylesheet" href="../css/global.css">
+	<title>panel</title>
+    <script type="text/javascript" src="../js/zepto.1.1.3.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body>
+<header class="cm-header">
+    <span class="icon-back fl cm-header-icon"></span>
+    <h1 class="cm-page-title">panel</h1>
+</header>
+<main id="pages" class="cm-page-wrap">
+    <article class="cm-page">
+        <div class="cm-content">
+            <span class="btn btn-panel">偏移式panel </span>
+            <span class="btn btn-mask-panel">遮盖式panel </span>
+        </div>
+    </article>
+</main>
+
+<section class="cm-panel">
+    偏移式panel
+</section>
+<section class="cm-mask-panel">
+    遮盖式panel
+</section>
+<script type="text/javascript">
+    $(function() {
+    var $pages = $('#pages');
+
+    $pages.on('click', '.btn-mask-panel', function() {
+      $('.cm-mask-panel').toggleClass('active');
+    });
+
+    $pages.on('click', '.btn-panel', function() {
+        var $panel = $('.cm-panel'),
+            $article = $(this).parents('.cm-page');
+
+      if($panel.hasClass('active')){
+        $panel.removeClass('active');
+        $article.addClass('cm-page--panel-off').one('transitionEnd', function(){$(this).removeClass('cm-page--panel-on cm-page--panel-off')});
+      }else{
+        $panel.addClass('active');
+        $article.addClass('cm-page--panel-on');
+      }
+      
+    });
+    $('.cm-panel').on('click',function(){
+      $(this).toggleClass('active');
+      $('.cm-page--panel-on').addClass('cm-page--panel-off');
+    })
+
+});
+</script>
+</body>
+</html>

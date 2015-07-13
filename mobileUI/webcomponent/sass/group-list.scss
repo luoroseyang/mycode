@@ -1,0 +1,76 @@
+﻿@charset "UTF-8";
+
+//---------------------------------------------------
+// accordion.scss
+//---------------------------------------------------
+
+@import "core/function";
+
+.cm-radio-list {
+    li {
+        @extend %bar-line;
+        box-sizing: border-box;
+        padding-right: 30px;
+    }
+    .active {
+        color: $primary;
+        &::after {
+            content: "";
+            width: 14px;
+            height: 6px;
+            border-bottom: 2px solid $primary;
+            border-left: 2px solid $primary;
+            position: absolute;
+            top: 50%;
+            right: 8px;
+            margin-top: -4px;
+            transform: rotate(-45deg) translateY(-50%);
+        }
+    }
+}
+
+.cm-group-list {
+    .cm-group-item{
+        &.expanded{
+            .cm-group-hd::after {
+                margin-top: 3px;
+                transform: translate(0, -50%) rotate(135deg);
+            }
+            .cm-group-bd{
+                display: block;
+            }
+        }
+        &:nth-of-type(1) {
+            .cm-group-hd {
+               border-top: 1px solid $borderColor; 
+            }
+        }
+    }
+    .cm-group-hd {
+        line-height: 34px;
+        font-weight: bold;
+        background-color: $grayLight;
+        position: relative;
+        padding: 0 10px;
+        border-bottom: 1px solid $borderColor;
+        
+        &::after {
+            content: "";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            margin-top: -3px;
+            @include arrow(bottom, 8px);
+            transform: translate(0, -50%) rotate(-45deg);
+            transition: transform 0.3s ease-in-out;
+        }
+    }
+    .cm-group-bd {
+        display: none;
+        li {
+            &:first-child {
+                border-top: none;
+            }
+        }
+    }
+}
