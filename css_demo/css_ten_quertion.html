@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>css问题</title>
+</head>
+<style>
+  .demo1{
+    float: left;
+    width: 300px;
+    height: 400px;
+    border: solid 1px #000;
+  }
+  .vertical{
+    -webkit-writing-mode: vertical-rl; 
+    writing-mode: tb-rl; 
+  }
+  .demo1 > p{
+    margin-top: 10%;
+    margin-top-color: #000;
+    border: solid 1px #000;
+  }
+  label{
+    border: solid 1px #000;
+    color: red;
+  }
+  .for_checkbox,
+  .for_hover,
+  .for_focus{
+    width: 100px;
+    height: 100px;
+    background: red;
+    display: none;
+  }
+  input:checked ~ .for_checkbox{
+    display: block;
+  }
+  
+  label:hover ~ .for_hover{
+    display: block;
+  }
+  .foucus_btn:focus ~ .for_focus{
+    display: block;
+  }
+  .down{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 50px solid #EC5353;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+  }
+  .down1{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-bottom: 50px solid #EC5353;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    position: relative;
+  }
+  .down1:before{
+    content: '';
+    height: 0px;
+    width: 0px;
+    display: block;
+    position: absolute;
+    top: 50px;
+    left: -50px;
+    border: 50px  60px solid #333;
+    border-top: 0;
+  }
+  .radius-btn{
+    padding: 0;
+    margin: 0 5px;
+    border: none;
+    background: #a5a5a5;
+    display: inline-block;
+    font-size: 26px;
+  }
+  .radius-btn span{
+    padding: 5px 10px;
+    margin: 1px -1px;
+    display: inline-block;
+    background: #a5a5a5;
+    cursor: pointer;
+  }
+  .float_test{
+    float: left;
+    width: 30px;
+    height: 130px;
+    margin-left: 10px;
+    background: #CCC;
+
+  }
+  .float_bottom{
+    height: 40px;
+    width: 250px;
+    background: #CCC;
+  }
+  .word > p{
+    margin: 0px;
+    text-indent: 2em;
+    word-wrap:break-word;
+    word-break:break-all;
+    overflow: auto;
+  }
+</style>
+<body>
+  <div class="demo1">
+    <p>我的书写模式为横向，margin百分比计算值参照对象为父元素的宽度。为30px;</p>
+  </div>
+  <div class="demo1 vertical">
+    <p>我的书写模式为纵向，margin百分比计算值参照对象为父元素的高度。为40px;</p>
+  </div>
+  <div class="demo1">
+    <label for="iiii">响应checkbox</label>
+    <input type="checkbox" id="iiii">
+    <div class="for_checkbox">点击label显示，利用label和checkbox行为一致的特性</div>
+    <div class="for_hover">hover label显示,利用伪类hover</div>
+    <button class="foucus_btn">ssss</button>
+    <div class="for_focus">focus label显示,利用伪类focus</div>    
+  </div>
+  <div class="demo1">
+    <div style="margin:20px;">
+      <span class="down"></span>
+      <span class="down1"></span>
+      <span class="down2"></span>
+      <span class="down3"></span>
+    </div>
+  </div>
+  <div class="demo1">
+    有一些特殊的行内元素，比如img，input，select等等，是可以被设置宽高的。一个内容不受CSS视觉格式化模型控制，CSS渲染模型并不考虑对此内容的渲染，且元素本身一般拥有固有尺寸（宽度，高度，宽高比）的元素，被称之为置换元素。比如img是一个置换元素，当不对它设置宽高时，它会按照本身的宽高进行显示。所以这个问题的正确答案应该是置换元素可以，非置换元素不可以。
+  </div>
+  <div class="demo1">
+    <a href="" class="radius-btn">
+      <span>span模拟圆角</span>
+    </a>
+  </div>
+  <div class="demo1">
+    <div class="demo2">
+      <div class="float_test">1</div>
+      <div class="float_test">2</div>
+      <div class="float_test">3</div>
+      <div class="float_test">4</div>
+    </div>
+    <div class="float_bottom">float下面</div>
+  </div>
+    <div class="demo1">
+    <div class="demo2">
+      <div class="float_test">1</div>
+      <div class="float_test">2</div>
+      <div class="float_test">3</div>
+      <div class="float_test">4</div>
+       div>style="clear:both"
+      <div style="clear:both"></div>
+    </div>
+    <div class="float_bottom">float下面</div>
+  </div>
+  <div class="demo1">
+    <div class="demo2">
+      <div class="float_test">1</div>
+      <div class="float_test">2</div>
+      <div class="float_test">3</div>
+      <div class="float_test">4</div>
+      br>style="clear:both"
+      <br style="clear:both">
+    </div>
+    <div class="float_bottom">float下面</div>
+  </div>
+  <div class="demo1">
+    <style>
+    .after_float:after{
+      content: '';
+      clear: both;
+      visibility: hidden;
+      display: block;
+      height: 0;
+    }
+    </style>
+    <div class="demo2 after_float">
+      <div class="float_test">1</div>
+      <div class="float_test">2</div>
+      <div class="float_test">3</div>
+      <div class="float_test">4</div>
+    </div>
+    after>clear:both,display:block;
+    <div class="float_bottom">float下面</div>
+  </div>
+  <div class="demo1">
+    <div class="demo2" style="display: table;">
+      <div class="float_test">1</div>
+      <div class="float_test">2</div>
+      <div class="float_test">3</div>
+      <div class="float_test">4</div>
+    </div>
+    父style="display: table;"
+    <div class="float_bottom">float下面</div>
+  </div>
+  <div class="demo1">
+    <div class="demo2" style="overflow: auto;">
+      <div class="float_test">1</div>
+      <div class="float_test">2</div>
+      <div class="float_test">3</div>
+      <div class="float_test">4</div>
+    </div>
+    父style="overflow: auto;"
+    <div class="float_bottom">float下面</div>
+  </div>
+  <div class="demo1">
+    <div class="demo2" style="overflow: hidden;">
+      <div class="float_test">1</div>
+      <div class="float_test">2</div>
+      <div class="float_test">3</div>
+      <div class="float_test">4</div>
+    </div>
+    父style="overflow: hidden;"
+    <div class="float_bottom">float下面</div>
+  </div>
+  <div class="demo1">
+    <div class="demo2" style="float:left;">
+      <div class="float_test">1</div>
+      <div class="float_test">2</div>
+      <div class="float_test">3</div>
+      <div class="float_test">4</div>
+    </div>
+    <div class="float_bottom">float下面</div>
+  </div>
+  <div class="demo1 word">
+    <p>Block formatting contexts(BFC)，块级格式化上下文是在CSS2.1中提出的一个概念，在布局中，BFC自成体系，对自己内部的元素负责，不会与浮动元素重叠，相邻BFC上下margin也不会重叠。所以我们会通过构造一个BFC来防止margin重叠，清除浮动或者实现一个双栏布局。</p>
+    <p>那么如何构造一个BFC呢？1.float设置为非none值；2.overflow设置为非visible；3.display设置为table-cell，table-caption，inline-block；4.position设置为absolute或fixed。这些方法刚好与上面提到构造BFC来清除浮动的方法相呼应。</p>
+    <p>需要特别注意的是，在IE6，7下没有BFC这个概念，但是有一个与BFC性质相似的概念：layout。在IE6，7中遇到的很多bug都可以通过让元素has layout来解决，比如浮动margin双边距，躲猫猫，3像素间距等等。</p>
+  </div>
+  <div class="demo1 word">
+    <p>有些元素例如table，input本身就has layout，那么如何让一个普通元素has layout呢？包括但不限于以下几种方法：1.position:absolute；2.float不为none；3.display:inline-block；4.height：除auto外任意值；5.width：除auto外任意值；6.zoom：除normal外任意值；7.overflow非visible(仅限IE7)。</p>
+    <p>这也是为什么我们会在IEhack中经常看到“height:1%”“zoom:1”“displaaaaaaaay:inline-block”“overflow:hidden”这些字眼的主要原因，其实就是为了让元素has layout嘛！</p>
+    <p>所以在IE6-7下，清除浮动除了可以使用clear:both外（::after伪元素无法使用），另一种方法就是让父元素has layout。</p>
+  </div>
+
+</body>
+</html>
